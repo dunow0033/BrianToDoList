@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/TodoForm">
+
+    <fragment
+        android:id="@+id/TodoForm"
+        android:name="com.express.android.briantodolist.ui.TodoForm"
+        android:label="Main Page"
+        tools:layout="@layout/fragment_todo_form">
+        <action
+            android:id="@+id/TodoFormToTodoList"
+            app:destination="@id/TodoList" />
+    </fragment>
+    <fragment
+        android:id="@+id/TodoList"
+        android:name="com.express.android.briantodolist.ui.TodoList"
+        android:label="Todo List"
+        tools:layout="@layout/fragment_todo_list">
+        <action
+            android:id="@+id/TodoListToTodoForm"
+            app:destination="@id/TodoForm" />
+        <action
+            android:id="@+id/action_todoList_to_todoItemDetail"
+            app:destination="@id/todoItemDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoItemDetail"
+        android:name="com.express.android.briantodolist.ui.TodoItemDetail"
+        android:label="Todo Item Detail"
+        tools:layout="@layout/fragment_todo_item_detail">
+        <action
+            android:id="@+id/TodoDetailToTodoList"
+            app:destination="@id/TodoList" />
+        <action
+            android:id="@+id/TodoDetailToTodoUpdate"
+            app:destination="@id/todoItemUpdate" />
+        <argument
+            android:name="currentTodo"
+            app:argType="com.express.android.briantodolist.model.Todo" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoItemUpdate"
+        android:name="com.express.android.briantodolist.ui.TodoUpdateFragment"
+        android:label="Todo Item Update"
+        tools:layout="@layout/fragment_todo_update">
+        <action
+            android:id="@+id/TodoItemUpdateToTodoList"
+            app:destination="@id/TodoList" />
+        <argument
+            android:name="currentTodo"
+            app:argType="com.express.android.briantodolist.model.Todo" />
+    </fragment>
+</navigation>
