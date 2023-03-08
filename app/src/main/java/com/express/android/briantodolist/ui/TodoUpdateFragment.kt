@@ -24,7 +24,7 @@ class TodoUpdateFragment : Fragment() {
 
     private lateinit var todoViewModel: TodoViewModel
 
-    //private val args by navArgs<TodoUpdateFragmentArgs>()
+    private val args by navArgs<TodoUpdateFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,8 +35,8 @@ class TodoUpdateFragment : Fragment() {
 
         todoViewModel = ViewModelProvider(this).get(TodoViewModel::class.java)
 
-//        binding.etName.setText(args.currentTodo.name)
-//        binding.etDetails.setText(args.currentTodo.detail)
+        binding.editTextTaskName.setText(args.currentTodo.name)
+        binding.editTextTaskDetail.setText(args.currentTodo.detail)
 
         binding.updateButton.setOnClickListener {
             updateItem()
@@ -46,18 +46,18 @@ class TodoUpdateFragment : Fragment() {
     }
 
     private fun updateItem() {
-        val todoName = binding.etName.text.toString()
-        val todoDetails = binding.etDetails.text.toString()
+        val todoName = binding.editTextTaskName.text.toString()
+        val todoDetails = binding.editTextTaskDetail.text.toString()
 
-//        if(inputCheck(todoName)) {
-//            val updateTodo = Todo(args.currentTodo.id, todoName, todoDetails)
-//
-//            todoViewModel.updateTodo(updateTodo)
-//            Toast.makeText(requireContext(), "Successfully updated!!", Toast.LENGTH_LONG).show()
-//            findNavController().navigate(R.id.TodoItemUpdateToTodoList)
-//        } else {
-//            Toast.makeText(requireContext(), "Please fill out the name field!!", Toast.LENGTH_LONG).show()
-//        }
+        if(inputCheck(todoName)) {
+            val updateTodo = Todo(args.currentTodo.id, todoName, todoDetails)
+
+            todoViewModel.updateTodo(updateTodo)
+            findNavController().navigate(R.id.TodoItemUpdateToTodoList)
+            Toast.makeText(requireContext(), "Successfully updated!!", Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(requireContext(), "Please fill out the name field!!", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun inputCheck(todoName: String): Boolean {

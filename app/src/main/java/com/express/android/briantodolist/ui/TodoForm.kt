@@ -30,6 +30,9 @@ class TodoForm : Fragment() {
 
         todoViewModel = ViewModelProvider(this).get(TodoViewModel::class.java)
 
+        binding.etName.setText("")
+        binding.etDetails.setText("")
+
         binding.submitButton.setOnClickListener {
             insertDataToDatabase()
         }
@@ -59,7 +62,7 @@ class TodoForm : Fragment() {
             } else {
                 Toast.makeText(
                     context,
-                    "Please enter the name of the item to be completed",
+                    "Please enter a name",
                     Toast.LENGTH_SHORT).show()
             }
         }

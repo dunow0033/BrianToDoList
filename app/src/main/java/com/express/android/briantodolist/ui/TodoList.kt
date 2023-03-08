@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ListAdapter
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.express.android.briantodolist.R
 import com.express.android.briantodolist.adapters.TodoItemAdapter
@@ -37,6 +38,10 @@ class TodoList : Fragment() {
         todoViewModel.readAllData.observe(viewLifecycleOwner, Observer { todo ->
             adapter.setData(todo)
         })
+
+        binding.homeButton.setOnClickListener {
+            findNavController().navigate(R.id.TodoListToTodoForm)
+        }
 
         return binding.root
     }

@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BrianToDoList/app/src/main/res/layout/activity_main.xml" value="0.2441123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/other/BrianToDoList/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/other/BrianToDoList/app/src/main/res/layout/fragment_todo_form.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/other/BrianToDoList/app/src/main/res/layout/fragment_todo_item_detail.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/other/BrianToDoList/app/src/main/res/layout/fragment_todo_list.xml" value="0.21" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/other/BrianToDoList/app/src/main/res/layout/fragment_todo_update.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/bedon/AndroidStudioProjects/BrianToDoList/app/src/main/res/layout/fragment_todo_form.xml" value="0.4" />
         <entry key="..\:/Users/bedon/AndroidStudioProjects/BrianToDoList/app/src/main/res/layout/fragment_todo_item_detail.xml" value="0.264" />
         <entry key="..\:/Users/bedon/AndroidStudioProjects/BrianToDoList/app/src/main/res/layout/fragment_todo_list.xml" value="0.23822463768115942" />
